@@ -22,7 +22,22 @@ Claude Code  ──(MCP / stdio)──>  autocad_mcp (Python)  ──(ActiveX/CO
 > Claude Code debe ejecutarse **en el mismo PC que AutoCAD** (no en la nube), porque
 > el servidor MCP se comunica con la instancia local de AutoCAD.
 
-## Instalación (5 minutos)
+## Instalación en un solo paso (recomendada)
+
+Abre **PowerShell** (tecla Windows → escribe *PowerShell* → Enter), pega este comando y pulsa Enter:
+
+```powershell
+irm https://raw.githubusercontent.com/marcohdza15-design/PRUEBA-CLAUDE/claude/autocad-mcp-integration-io4zvf/scripts/bootstrap.ps1 | iex
+```
+
+Instala lo que falte (Git, Python 3.12, Claude Code), descarga el proyecto en
+`%USERPROFILE%\autocad-mcp`, crea el entorno de Python y registra el servidor `autocad`
+en Claude Code. Puede que Windows pida permiso (UAC) para instalar Git o Python: acéptalo.
+Si al final indica que cierres y abras PowerShell, hazlo y vuelve a pegar el mismo comando
+(es seguro repetirlo). Después sigue desde el paso 3 de abajo, usando la carpeta
+`%USERPROFILE%\autocad-mcp`.
+
+## Instalación paso a paso
 
 1. **Descarga el proyecto**
    - Con Git: `git clone https://github.com/marcohdza15-design/prueba-claude.git`
@@ -121,6 +136,7 @@ src/autocad_mcp/
   mock_backend.py  # implementación simulada para pruebas
   worker.py        # hilo único con COM inicializado
 scripts/
+  bootstrap.ps1               # instalación completa en un paso (irm ... | iex)
   install.ps1 / install.bat   # instalador para Windows
   test_connection.py          # prueba directa contra AutoCAD
 tests/test_mock.py
