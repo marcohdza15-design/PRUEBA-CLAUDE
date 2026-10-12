@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__autocad"
+    ],
+    "ask": [
+      "mcp__autocad__send_command",
+      "mcp__autocad__save_drawing",
+      "mcp__autocad__open_drawing",
+      "mcp__autocad__new_drawing"
+    ]
+  }
+}

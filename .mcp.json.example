@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "autocad": {
+      "type": "stdio",
+      "command": "C:\\RUTA\\A\\PRUEBA-CLAUDE\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "autocad_mcp"],
+      "env": {}
+    }
+  }
+}
